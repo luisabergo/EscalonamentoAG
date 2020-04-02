@@ -1,0 +1,18 @@
+CheckList e Planejamento:
+------------------------------------------------
+|X| Implementar estrutura final da instancia  
+|X| Leitura dos dados para estrutura final da instancia 
+|X| Decidir Estrutura da Solucao 
+|X| Implementar estrutura da solucao 
+|X| Heuristica de Construcao 
+|X| Métodos de codificacao, decodificacao e montagem da solucao  (USAR BUFFER)
+
+| |Revisar estruturas e documentação
+--------------------------------------------------------- Algoritmo Genetico
+| | Mutacoes Maquinas e Classes
+| | Mutacao de Operacoes
+| |Crossover Maquinas e Classes
+| | Crossover Operacoes
+| | Algoritmo Genetico 
+| | Gerar estatisticas 
+
