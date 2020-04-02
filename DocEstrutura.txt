@@ -1,0 +1,268 @@
+\\---------------------------------Documentação da Estrutura do AG ------------------------\\
+
+Classes :
+
+Tarefa
+
+Operação
+
+Instância
+
+População
+
+Úteis
+
+Indíviduo
+
+Custo
+
+\\--------------------------------Classe Tarefa-----------------------------------------------------------//
+
+
+		Atributos
+
+		int ind1Op;
+		int qtdOp
+
+
+		Operações
+    		Tarefa();
+   		 ~Tarefa();
+    		Tarefa(int io, int qo);
+
+   		 //Gets e sets das variaveis basicas
+    		int getInd1Op();
+    		void setInd1Op(int io);
+
+    		int getQtdOperacoes();
+    		void getQtdOperacoes(int qo);
+
+\\--------------------------------Classe Operação-----------------------------------------------------------//
+
+		Atributos
+		int idTarefa;  //Guarda o Indice da tarefa da qual a operacao faz parte
+    		int idOperacao; //ID da operacao
+    		int idSequencial; //ID unico que toma como referencia o numero de operacoes
+    		int qtdMaquinas; 
+
+
+		Operações
+    		vector<Custo*> estruturaCustos[3];
+
+    		//primeiro :  <Classe de trabalhador<Maquina<Custo*>>>
+    		//classe de trabalhador tem numero fixo.
+
+
+    		//Construtores da classe
+   		 vector<int> vetMaq; //Guarda o ID das maquinas que podem executar a operacao
+   		 Operacao();
+   		 ~Operacao();
+    		Operacao(int idT, int qtdM, int nct, int ids, int ido);
+
+    		//Gets e sets das variaveis basicas
+    		int getIdTarefa();
+    		void setIdTarefa(int idT);
+
+    		int getIdOperacao();
+    		void setIdOperacao(int idO);
+
+
+   		 int getQtdMaquinas();
+    		void setQtdMaquinas(int qtdM);
+
+    		int getIdSequencial();
+    		void setIdSequencial(int idS);
+
+
+
+    		//Funcao para pushback de 6 custos Custo* dentro da estrutura
+    		void insereCusto(Custo* c, int idClasse, int idMaquina);
+\\--------------------------------Classe Instância-----------------------------------------------------------//
+
+		Atributos
+		 int nTarefas;  //Numero de tarefas a serem escalonadas
+    		int nMaquinas;//Numero de maquinas envolvidas no escalonamento
+    		int nClassesTrab; // numero de classes de trabalhadores
+    		int totalOperacoes; // número total de operacoes de todo o escalonamento
+    		int totalLeituraMaquinas;
+
+
+		Operações
+		Gets e Sets
+
+
+		Instancia();  //Construtor
+    		Instancia(int n, int nm, int nc);//Construtor da classe inicializando variáveis principais
+    		~Instancia(); //Destrutor
+
+
+    		int getNTarefas();
+    		void setNTarefas(int nt);
+
+    		int getNMaquinas();
+    		void setNMaquinas(int nm);
+
+    		int getNClassesTrab();
+    		void setNClassesTrab(int nct);
+
+    		int getNTotalOps();
+    		void setNTotalOps(int nto);
+
+    		int getNTotalLeituraMaqs();
+    		void setNTotalLeituraMaqs(int ntlm);
+
+
+
+\\--------------------------------Classe População-----------------------------------------------------------//
+
+		Atributos
+	int maiorRankingTempo;
+        int maiorRankingFinanceiro;
+        float maiorRankingVerde;
+
+
+		Operações
+
+	vector<Genotipo*> pInicial;
+        vector<Genotipo*> pMutacao1;
+        vector<Genotipo*> pMutacao2;
+        vector<Genotipo*> pMutacao3;
+
+            vector<Genotipo*> pFinal;
+
+        Populacao();
+        ~Populacao();
+
+        int getMaiorRankingTempo();
+        void RankingTempo();
+
+    int getMaiorRankingFinanceiro();
+    void RankingFinanceiro();
+    float getMaiorRankingVerde();
+    void RankingVerde();
+
+
+	    		//DEVERIA SER IMPLEMENTADA NA POPULACAO
+
+    		void calculaFitness(Genotipo* g);
+
+    		void calculaMakeSpan(Genotipo* g);
+
+    		void AlgGenetico();
+
+\\--------------------------------Classe Úteis-----------------------------------------------------------//
+
+		Operações
+
+
+		bool comparaTempo(Genotipo* g1, Genotipo* g2);
+		bool comparaFinanceiro(Genotipo* g1, Genotipo* g2);
+		bool comparaVerde(Genotipo* g1, Genotipo* g2);
+\\--------------------------------Classe Indíviduo-----------------------------------------------------------//
+		
+		Atributos
+
+		    //o tamanho dos 3 vetores será o numero de operações total
+    int nOperacoes; //Numero de operacoes total
+    int fitnessTempo; // Custo total de tempo após montar solução no tempo
+    int fitnessFinanceiro; // custo total de gastos financeiros após montar solucao no tempo
+    float fitnessVerde; // custo total de impacto ambiental e social ao montar solucoes no tempo
+    int* seqOp; //Vetor que guarda informaçao da ordem que as operações serão escalonadas
+    int* idMaq; //Vetor que guarda informações de qual maquina ira executar qual operação
+    int* idClasses; //Vetor que guarda informações de qual classe de trabalhadores ira executar qual operação
+
+
+		Operações
+
+		    //Construtores da classe
+    Genotipo();
+    ~Genotipo();
+    void Free();
+    Genotipo(int s[],int nOperacoes);
+    Genotipo(int nOperacoes);
+
+    //setar os valores fitness da solucao
+    void setFitness(int financeiro, int verde);
+
+    void setMakeSpan(int ct);
+
+    int getFitnessTempo();
+
+    int getFitnessFinanceiro();
+
+    float getFitnessVerde();
+
+    int getSeqOp(int indice);
+
+    void setSeqOp(int s[], int nOperacoes);
+
+    int getIdMaq(int indice);
+
+    void setIdMaq(int s[], int nOperacoes);
+
+    void setIdMaq(int indice, int valor);
+
+    int getIdClasses(int indice);
+
+    void setIdClasses(int s[], int nOperacoes);
+
+    void setIdClasses(int indice, int valor);
+
+
+	        	//DEVERIAM SER IMPLEMENTADA EM INDIVIDUO
+    		void ConstroiH();        
+
+    		bool verificaViabilidade(Genotipo* g);
+    
+		Genotipo* MutacaoClasse(Genotipo* g);
+
+    		Genotipo* MutacaoMaquina(Genotipo* g);
+
+   		 Genotipo* MutacaoOperacao(Genotipo* g);
+
+		
+\\--------------------------------Classe Custo-----------------------------------------------------------//
+
+
+
+		Atributos
+
+		    int custoFinanceiro;  //Custo financeiro
+    int custoTempo; //Custo de tempo
+    float consumoEnergia; //Consumo de Energia
+    float barulho;   //Barulho que a operaçao ira fazer
+    float reciclagem; //Reciclagem das Ferramentas
+    float seguranca; //Segurança na operação
+    float custoVerde; //Custo de questões ecológicas condensadas em apenas um indicador
+
+
+		Operações
+
+		    Custo();
+    ~Custo();
+    Custo(int cf, int ct, float ce, float b, float r, float s);
+    int getCustoFinanceiro();
+    void setCustoFinanceiro(int cf);
+
+    int getCustoTempo();
+    void setCustoTempo(int ct);
+
+    float getConsumoEnergia();
+    void setConsumoEnergia(float ce);
+
+    float getBarulho();
+    void setBarulho(float b);
+
+    float getReciclagem();
+    void setReciclagem(float r);
+
+    float getSeguranca();
+    void setSeguranca(float s);
+
+    float getCustoVerde();
+    void setCustoVerde(float cv);
+
+    void calculaCustoVerde();
+
+
+\\-------------------------------------------------------------------------------------------------------//

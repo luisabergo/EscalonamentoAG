@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="EscalonamentoAG"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EscalonamentoAG">
+				<Option output="/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/EscalonamentoAG" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 EscalonamentoAG"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="EscalonamentoAG/fast">
+				<Option output="/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/EscalonamentoAG" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 EscalonamentoAG/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/custo.cpp">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/custo.h">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/genotipo.cpp">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/genotipo.h">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/instancia.cpp">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/instancia.h">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/main.cpp">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/operacao.cpp">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/operacao.h">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/populacao.cpp">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/populacao.h">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/tarefa.cpp">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/tarefa.h">
+			<Option target="EscalonamentoAG"/>
+		</Unit>
+		<Unit filename="/home/luisa/CLionProjects/EscalonamentoAG/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

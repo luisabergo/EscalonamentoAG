@@ -1,0 +1,3 @@
+/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/CMakeFiles/EscalonamentoAG.dir
+/home/luisa/CLionProjects/EscalonamentoAG/cmake-build-debug/CMakeFiles/edit_cache.dir
