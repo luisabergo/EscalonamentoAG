@@ -2,13 +2,6 @@
 // Created by luisa on 25/07/2019.
 //
 #include "instancia.h"
-#include "operacao.h"
-#include <stdlib.h>
-#include <random>
-#include <stdio.h>
-#include <iostream>
-#include <sstream>
-#include <fstream>
 
 Instancia::Instancia()
 {

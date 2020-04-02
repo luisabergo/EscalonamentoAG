@@ -28,6 +28,18 @@ Genotipo::Genotipo(int nOp, int nmaquinas)
     this->nOperacoes = nOp;
 
 }
+
+int Genotipo::getNOperacoes()
+{
+    return this->nOperacoes;
+}
+
+void Genotipo::setNOperacoes(int nops)
+{
+    this->nOperacoes = nops;
+
+}
+
 void Genotipo::setFitness(int financeiro, int verde)
 {
     fitnessFinanceiro = financeiro;
@@ -43,14 +55,34 @@ int Genotipo::getFitnessTempo()
     return this->fitnessTempo;
 }
 
+void Genotipo::setFitnessTempo(int ft)
+{
+    this->fitnessTempo = ft;
+}
+
 int Genotipo::getFitnessFinanceiro()
 {
     return this->fitnessFinanceiro;
 }
 
+void Genotipo::setFitnessFinanceiro(int ff)
+{
+    this->fitnessFinanceiro = ff;
+}
+
 float Genotipo::getFitnessVerde()
 {
     return this->fitnessVerde;
+}
+
+void Genotipo::setFitnessVerde(int fv)
+{
+    this->fitnessTempo = fv;
+}
+
+int* Genotipo::getSeqOp()
+{
+    return this->seqOp;
 }
 
 int Genotipo::getSeqOp(int indice)
@@ -65,6 +97,12 @@ void Genotipo::setSeqOp(int s[], int nOperacoes)
         this->seqOp[i] = s[i];
 
     }
+}
+
+int* Genotipo::getIdMaq()
+{
+    return this->idMaq;
+
 }
 
 int Genotipo::getIdMaq(int indice)
@@ -84,6 +122,11 @@ void Genotipo::setIdMaq(int indice, int valor)
     this->idMaq[indice] = valor;
 }
 
+int* Genotipo::getIdClasses()
+{
+    return this->idClasses;
+}
+
 int Genotipo::getIdClasses(int indice)
 {
     return this->idClasses[indice];
@@ -100,6 +143,30 @@ void Genotipo::setIdClasses(int s[], int nOperacoes)
     this->idClasses[i] = s[i];
 
     }
+}
+
+int* Genotipo::getTempoFinalMaquinas()
+{
+    return this->tempoFinalMaquinas;
+}
+
+int Genotipo::getTempoFinalMaquinas(int indice)
+{
+    return this->idClasses[indice];
+}
+
+void Genotipo::setTempoFinalMaquinas(int s[], int nOperacoes)
+{
+    for(int i=0; i<nOperacoes; i++)
+    {
+        this->idClasses[i] = s[i];
+
+    }
+}
+
+void Genotipo::setTempoFinalMaquinas(int indice, int valor)
+{
+    this->idClasses[indice] = valor;
 }
 
 void Genotipo::calculaFitness(Instancia * dados)
@@ -310,6 +377,19 @@ void Genotipo::MutacaoMaquina(Instancia * dados)
     this->setIdMaq(sorteioPosicao, sorteioMaquina);
     this->calculaFitness(dados);
     this->calculaMakeSpan(dados);
+}
+
+void Genotipo::FazerCopia(Genotipo * g1, Genotipo * g2)
+{
+    g2->setFitnessTempo(g1->getFitnessTempo());
+    g2->setFitnessFinanceiro(g1->getFitnessFinanceiro());
+    g2->setFitnessVerde(g1->getFitnessVerde());
+    g2->setNOperacoes(g1->getNOperacoes());
+    g2->setSeqOp(g1->getSeqOp(), g1->getNOperacoes());
+    g2->setIdMaq(g1->getIdMaq(), g1->getNOperacoes());
+    g2->setIdClasses(g1->getIdClasses(), g1->getNOperacoes());
+    g2->setTempoFinalMaquinas(g1->getTempoFinalMaquinas(), g1->getNOperacoes());
+
 }
 
 void Genotipo::MutacaoClasse(Instancia * dados)

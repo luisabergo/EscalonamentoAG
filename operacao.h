@@ -25,9 +25,10 @@ public:
     //primeiro :  <Classe de trabalhador<Maquina<Custo*>>>
     //classe de trabalhador tem numero fixo.
 
+    vector<int> vetMaq; //Guarda o ID das maquinas que podem executar a operacao
 
     //Construtores da classe
-    vector<int> vetMaq; //Guarda o ID das maquinas que podem executar a operacao
+
     Operacao();
     ~Operacao();
     Operacao(int idT, int qtdM, int nct, int ids, int ido);

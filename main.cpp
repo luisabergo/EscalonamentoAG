@@ -10,6 +10,7 @@
 #include "operacao.h"
 #include "custo.h"
 #include "populacao.h"
+#include "genotipo.h"
 
 using namespace std;
 
@@ -214,7 +215,7 @@ int main ()
     //----------------------------------------- ALGORITMO GENETICO-------------------------//
 
 
-    //Geracao da Populacao Inicial
+    //Geracao da Populacao Inicial atraves de Heuristica Construtiva
 
     int tamanhoPopulacao=20, nGeracoes=10;
     Populacao* p = new Populacao();
@@ -239,40 +240,34 @@ int main ()
     }
     p->RankingTempo();
 
-    for(int i=0; i<p->pInicial.size(); i++)
+ /*   for(int i=0; i<p->pInicial.size(); i++)
     {
-        cout << "Solucao na posicao " << i << ":" << p->pInicial.at(i)->getFitnessTempo() << endl;
-    }
+        Genotipo* sol1 = new Genotipo(instancia1->getNTotalOps(), instancia1->getNMaquinas());
+        Genotipo* sol2 = new Genotipo(instancia1->getNTotalOps(), instancia1->getNMaquinas());
+        cout << "Solucao na posicao " << i+1 << ":" << p->pInicial.at(i)->getFitnessTempo() << endl;
+
+         sol1->FazerCopia(p->pInicial.at(i), sol1);
+         sol2->FazerCopia(p->pInicial.at(i), sol2 );
+
+
+         sol1->MutacaoMaquina(instancia1);
+
+        sol2->MutacaoClasse(instancia1);
+        p->pMutacao1.push_back(sol1);
+        p->pMutacao2.push_back(sol2);
+        //p->pMutacao2.at(i)->MutacaoClasse(instancia1);
+
+        cout << "Mutacao 1 na posicao " << i+1 << ":" << p->pMutacao1.at(i)->getFitnessTempo() << endl;
+
+        sol1->~Genotipo();
+        sol2->~Genotipo();
+        cout << "Mutacao 2 na posicao " << i+1  << ":" << p->pMutacao2.at(i)->getFitnessTempo() << endl;
+    }*/
 
 
     //Algoritmo Genetico
 
- /*   while(nGeracoes!=0)
-    {
-       for(int i=0; i<tamanhoPopulacao; i++)
-        {
-            sol = instancia1->MutacaoMaquina(p->pInicial.at(i));
-            p->pMutacao1.push_back(sol);
-            sol = instancia1->MutacaoClasse(p->pInicial.at(i));
-            p->pMutacao2.push_back(sol);
-        }
 
-        p->RankingTempo();
-
-
-
-        for(int i=0; i<tamanhoPopulacao; i++)
-        {
-            p->pFinal.push_back(p->pInicial.at(i));
-
-        }
-        p->pInicial.clear();
-
-        nGeracoes--;
-        cout << "Melhor solução da Geração:" << p->pInicial.at(0) << endl;
-        p->pInicial = p->pFinal;
-
-    }*/
 
 
     return 0;

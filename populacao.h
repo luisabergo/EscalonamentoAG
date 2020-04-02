@@ -18,7 +18,7 @@ class Populacao
         int maiorRankingFinanceiro;
         float maiorRankingVerde;
     public:
-            vector<Genotipo*> pInicial;
+        vector<Genotipo*> pInicial;
         vector<Genotipo*> pMutacao1;
         vector<Genotipo*> pMutacao2;
         vector<Genotipo*> pMutacao3;

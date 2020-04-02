@@ -28,19 +28,33 @@ public:
     Genotipo(int nOp, int nmaquinas);
 
     //setar os valores fitness da solucao
+    int getNOperacoes();
+
+    void setNOperacoes(int nops);
+
     void setFitness(int financeiro, int verde);
 
     void setMakeSpan(int ct);
 
     int getFitnessTempo();
 
+    void setFitnessTempo(int ft);
+
     int getFitnessFinanceiro();
+
+    void setFitnessFinanceiro(int ff);
 
     float getFitnessVerde();
 
+    void setFitnessVerde(int fv);
+
     int getSeqOp(int indice);
 
+    int* getSeqOp();
+
     void setSeqOp(int s[], int nOperacoes);
+
+    int* getIdMaq();
 
     int getIdMaq(int indice);
 
@@ -48,11 +62,21 @@ public:
 
     void setIdMaq(int indice, int valor);
 
+    int* getIdClasses();
+
     int getIdClasses(int indice);
 
     void setIdClasses(int s[], int nOperacoes);
 
     void setIdClasses(int indice, int valor);
+
+    int* getTempoFinalMaquinas();
+
+    int getTempoFinalMaquinas(int indice);
+
+    void setTempoFinalMaquinas(int s[], int nOperacoes);
+
+    void setTempoFinalMaquinas(int indice, int valor);
 
     //construir solucao do zero com heuristica
     void ConstroiH(Instancia * dados);
@@ -67,9 +91,11 @@ public:
 
     void MutacaoMaquina(Instancia * dados);
 
-    void MutacaoOperacao(Instancia * dados);
+    void FazerCopia(Genotipo * g1, Genotipo * g2);
 
-    void AlgGenetico();
+    //NAO OPERACIONAL
+
+    void MutacaoOperacao(Instancia * dados);
 
 };
 
