@@ -25,8 +25,20 @@ Genotipo::Genotipo(int nOp, int nmaquinas)
     idMaq = new int[nOp];
     idClasses = new int[nOp];
     tempoFinalMaquinas = new int[nmaquinas];
+    this->nMaquinas = nmaquinas;
     this->nOperacoes = nOp;
 
+}
+
+int Genotipo::getNMaquinas()
+{
+    return this->nMaquinas;
+
+}
+
+void Genotipo::setNMaquinas(int mqs)
+{
+    this->nMaquinas = mqs;
 }
 
 int Genotipo::getNOperacoes()
@@ -77,7 +89,7 @@ float Genotipo::getFitnessVerde()
 
 void Genotipo::setFitnessVerde(int fv)
 {
-    this->fitnessTempo = fv;
+    this->fitnessVerde = fv;
 }
 
 int* Genotipo::getSeqOp()
@@ -152,21 +164,21 @@ int* Genotipo::getTempoFinalMaquinas()
 
 int Genotipo::getTempoFinalMaquinas(int indice)
 {
-    return this->idClasses[indice];
+    return this->tempoFinalMaquinas[indice];
 }
 
-void Genotipo::setTempoFinalMaquinas(int s[], int nOperacoes)
+void Genotipo::setTempoFinalMaquinas(int s[], int nMaquinas)
 {
-    for(int i=0; i<nOperacoes; i++)
+    for(int i=0; i<nMaquinas; i++)
     {
-        this->idClasses[i] = s[i];
+        this->tempoFinalMaquinas[i] = s[i];
 
     }
 }
 
 void Genotipo::setTempoFinalMaquinas(int indice, int valor)
 {
-    this->idClasses[indice] = valor;
+    this->tempoFinalMaquinas[indice] = valor;
 }
 
 void Genotipo::calculaFitness(Instancia * dados)
@@ -367,16 +379,19 @@ void Genotipo::ConstroiH(Instancia * dados)
 
 }
 
-void Genotipo::MutacaoMaquina(Instancia * dados)
+void Genotipo::MutacaoMaquina(Instancia * dados, Genotipo * g)
 {
     std::random_device rd;  //Will be used to obtain a seed for the random number engine
     std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
     std::uniform_int_distribution<> dis(1, 6);
     int sorteioPosicao = dis(gen)%dados->getNTotalOps();
     int sorteioMaquina = dis(gen)%dados->vetQtdMaqPorOperacao.at(sorteioPosicao);
-    this->setIdMaq(sorteioPosicao, sorteioMaquina);
-    this->calculaFitness(dados);
-    this->calculaMakeSpan(dados);
+
+    this->FazerCopia(this, g);
+    g->setIdMaq(sorteioPosicao, sorteioMaquina);
+    g->calculaFitness(dados);
+    g->calculaMakeSpan(dados);
+
 }
 
 void Genotipo::FazerCopia(Genotipo * g1, Genotipo * g2)
@@ -388,18 +403,18 @@ void Genotipo::FazerCopia(Genotipo * g1, Genotipo * g2)
     g2->setSeqOp(g1->getSeqOp(), g1->getNOperacoes());
     g2->setIdMaq(g1->getIdMaq(), g1->getNOperacoes());
     g2->setIdClasses(g1->getIdClasses(), g1->getNOperacoes());
-    g2->setTempoFinalMaquinas(g1->getTempoFinalMaquinas(), g1->getNOperacoes());
+    g2->setTempoFinalMaquinas(g1->getTempoFinalMaquinas(), g1->getNMaquinas());
 
 }
 
-void Genotipo::MutacaoClasse(Instancia * dados)
+void Genotipo::MutacaoClasse(Instancia * dados, Genotipo * g)
 {
     std::random_device rd;  //Will be used to obtain a seed for the random number engine
     std::mt19937 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
     std::uniform_int_distribution<> dis(1, 6);
     int sorteioClasse = dis(gen)%3;
     int sorteioPosicao = dis(gen)%dados->getNTotalOps();
-    this->setIdClasses(sorteioPosicao, sorteioClasse);
+    this->setIdMaq(sorteioPosicao, sorteioClasse);
     this->calculaFitness(dados);
     this->calculaMakeSpan(dados);
 

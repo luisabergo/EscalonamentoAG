@@ -7,9 +7,13 @@ CheckList e Planejamento:
 |X| Heuristica de Construcao 
 |X| Métodos de codificacao, decodificacao e montagem da solucao  (USAR BUFFER)
 
-| |Revisar estruturas e documentação
+|X|Revisar estruturas e documentação pte1
 --------------------------------------------------------- Algoritmo Genetico
-| | Mutacoes Maquinas e Classes
+|X| Mutacoes Maquinas e Classes
+
+
+Detalhe 02/04
+Revisar estrutura pois há conflito entre o valor do idMaq e sua posicao na estrutura
 | | Mutacao de Operacoes
 | |Crossover Maquinas e Classes
 | | Crossover Operacoes

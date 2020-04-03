@@ -22,7 +22,7 @@ int main ()
 
 //---------------------------------------------------------------------------------------------Leitura
     // Leitura dos parametros do executavel
-    std::string nomeEntrada = "DFJSP01.txt";
+    std::string nomeEntrada = "DFJSP02.txt";
     //Declaracao de todas as variaveis utilizadas no main
     string leitura, aux;
     int auxInt, somatorio=0, aux1, aux2;
@@ -175,8 +175,9 @@ int main ()
 
 
 //-----------------------------------------------------------------TESTES HEURISTICA CONSTRUTIVA
-
-	/*sol->ConstroiH(instancia1);
+   Genotipo* sol = new Genotipo(instancia1->getNTotalOps(), instancia1->getNMaquinas());
+    Genotipo* sol3 = new Genotipo(instancia1->getNTotalOps(), instancia1->getNMaquinas());
+	sol->ConstroiH(instancia1);
 
     cout << "Para i, SOLUCAO SEQUENCIA:" << endl;
     for(int i=0; i<instancia1->getNTotalOps(); i++)
@@ -201,15 +202,16 @@ int main ()
 	
     cout << "Custo Tempo" << sol->getFitnessTempo() << endl;
     cout << "Custo Financeiro:" <<  sol->getFitnessFinanceiro() << endl;
-    cout << "Custo Verde:" <<  sol->getFitnessVerde() << endl;*/
+    cout << "Custo Verde:" <<  sol->getFitnessVerde() << endl;
 
-   //-------------------------------------------TESTES DE OPERADORES-------------------------///
+    for(int i=0 ; i<20; i++)
+   sol->MutacaoMaquina(instancia1,sol3);
 
-  /* sol->MutacaoMaquina(instancia1);
 
-    cout << "Custo Tempo" << sol->getFitnessTempo() << endl;
-    cout << "Custo Financeiro:" <<  sol->getFitnessFinanceiro() << endl;
-    cout << "Custo Verde:" <<  sol->getFitnessVerde() << endl;*/
+
+    cout << "Custo Tempo" << sol3->getFitnessTempo() << endl;
+    cout << "Custo Financeiro:" <<  sol3->getFitnessFinanceiro() << endl;
+    cout << "Custo Verde:" <<  sol3->getFitnessVerde() << endl;
 
 
     //----------------------------------------- ALGORITMO GENETICO-------------------------//
@@ -232,37 +234,26 @@ int main ()
 	sol->calculaFitness(instancia1);
 	sol->calculaMakeSpan(instancia1);
         cout << "Solução inserida com custo " << sol->getFitnessTempo() <<  endl;
-        cout << "Desalocando Solução " << i << endl;
-	sol->~Genotipo();
-
-        cout <<  "Solução desalocada" << endl;
 
     }
-    p->RankingTempo();
+   //p->RankingTempo();
 
- /*   for(int i=0; i<p->pInicial.size(); i++)
+  for(int i=0; i<20; i++)
     {
         Genotipo* sol1 = new Genotipo(instancia1->getNTotalOps(), instancia1->getNMaquinas());
         Genotipo* sol2 = new Genotipo(instancia1->getNTotalOps(), instancia1->getNMaquinas());
-        cout << "Solucao na posicao " << i+1 << ":" << p->pInicial.at(i)->getFitnessTempo() << endl;
+        cout << "Solucao na posicao " << i << ":" << p->pInicial.at(i)->getFitnessTempo() << endl;
 
-         sol1->FazerCopia(p->pInicial.at(i), sol1);
-         sol2->FazerCopia(p->pInicial.at(i), sol2 );
-
-
-         sol1->MutacaoMaquina(instancia1);
-
-        sol2->MutacaoClasse(instancia1);
+        p->pInicial.at(i)->MutacaoMaquina(instancia1, sol1);
+        p->pInicial.at(i)->MutacaoClasse(instancia1,sol2);
         p->pMutacao1.push_back(sol1);
         p->pMutacao2.push_back(sol2);
-        //p->pMutacao2.at(i)->MutacaoClasse(instancia1);
 
-        cout << "Mutacao 1 na posicao " << i+1 << ":" << p->pMutacao1.at(i)->getFitnessTempo() << endl;
+        cout << "Mutacao 1 na posicao " << i << ":" << p->pMutacao1.at(i)->getFitnessTempo() << endl;
 
-        sol1->~Genotipo();
-        sol2->~Genotipo();
-        cout << "Mutacao 2 na posicao " << i+1  << ":" << p->pMutacao2.at(i)->getFitnessTempo() << endl;
-    }*/
+
+        cout << "Mutacao 2 na posicao " << i  << ":" << p->pMutacao2.at(i)->getFitnessTempo() << endl;
+    }
 
 
     //Algoritmo Genetico

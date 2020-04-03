@@ -12,6 +12,7 @@ class Genotipo
 {
 private:
     //o tamanho dos 3 vetores será o numero de operações total
+    int nMaquinas; //Numero de Maquinas
     int nOperacoes; //Numero de operacoes total
     int fitnessTempo; // Custo total de tempo após montar solução no tempo
     int fitnessFinanceiro; // custo total de gastos financeiros após montar solucao no tempo
@@ -31,6 +32,10 @@ public:
     int getNOperacoes();
 
     void setNOperacoes(int nops);
+
+    int getNMaquinas();
+
+    void setNMaquinas(int mqs);
 
     void setFitness(int financeiro, int verde);
 
@@ -87,9 +92,9 @@ public:
 
     void calculaMakeSpan(Instancia * dados);
 
-    void MutacaoClasse(Instancia * dados);
+    void MutacaoClasse(Instancia * dados,  Genotipo * g);
 
-    void MutacaoMaquina(Instancia * dados);
+    void MutacaoMaquina(Instancia * dados, Genotipo * g);
 
     void FazerCopia(Genotipo * g1, Genotipo * g2);
 
